@@ -1,0 +1,4 @@
+hadoop jar /home/soumi07/kmean.jar main.KMeans /kmeanOut
+hdfs dfs -rm /kmeanOut/_SUCCESS
+hdfs dfs -rm /kmeanOut/part-r-00000
+hdfs dfs -rmdir /kmeanOut
