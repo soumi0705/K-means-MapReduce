@@ -23,7 +23,7 @@ public class KMeans {
 	
 	public KMeans(int k) throws IOException {
 		this.k = k;
-		listPoints = PointService.getListPoints("/home/soumi07/Desktop/LSDP/K-means MapReduce/data/input.txt");
+		listPoints = PointService.getListPoints("/home/soumi07/Desktop/LSDP/K-means MapReduce/data/HCD.csv");
 	}
 	
 	public int getNumberOfCircle() {
@@ -52,7 +52,7 @@ public class KMeans {
 	public static void main(String[] args)
 			throws NumberFormatException, IOException, ClassNotFoundException, InterruptedException {
 		String out = args[0];
-		String in = "/data/input";
+		String in = "/data/hcd";
 		String cen = "/home/soumi07/Desktop/LSDP/K-means MapReduce/data/cen.seq";
 
 		KMeans kmeans = new KMeans(3); // 3 cluster

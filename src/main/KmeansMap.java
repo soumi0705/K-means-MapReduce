@@ -30,7 +30,7 @@ public class KmeansMap extends Mapper<Object, Text, PointWritable, PointWritable
 		Configuration conf = context.getConfiguration();
 		
 		String pathCenter = conf.get("pathCenter");
-		listCenter = PointService.getListPoints(pathCenter);
+		listCenter = PointService.getListCenPoints(pathCenter);
 		
 		distance = new EuclideanDistance();
 		
@@ -47,10 +47,10 @@ public class KmeansMap extends Mapper<Object, Text, PointWritable, PointWritable
 		while(token.hasMoreTokens()) {
 			String line = token.nextToken();
 			System.out.println("Token :"+ line);
-			String[] xy = line.split(" ");
+			String[] xy = line.split(",");
 			
-			int x = Integer.parseInt(xy[0]);
-			int y = Integer.parseInt(xy[1]);
+			int x = Integer.parseInt(xy[2]);
+			int y = Double.valueOf(Double.parseDouble(xy[7])).intValue();
 			PointWritable pw = new PointWritable(x, y);
 			
 			double minDistance = Double.MAX_VALUE;
