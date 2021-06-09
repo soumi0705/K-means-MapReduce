@@ -22,7 +22,7 @@ public class PointService {
 		String line = buffer.readLine();
 		while (line != null) {
 			String tmpString[] = line.split(",");
-			System.out.println(tmpString[2]+" "+tmpString[7]);
+			//System.out.println(tmpString[2]+" "+tmpString[7]);
 			Integer tmp0 = Integer.parseInt(tmpString[2]);
 			Double tmp1 = Double.parseDouble(tmpString[7]);
 			Integer tmp2 = Double.valueOf(tmp1).intValue();
